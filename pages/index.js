@@ -36,7 +36,6 @@ export default function Home() {
         <meta name="author" content="Face Shape Detect" />
         <meta property="og:title" content="Face Shape Detector with AI" />
         <meta property="og:description" content="Upload an image and let AI detect your unique face shape. Personalized styling recommendations based on your face shape." />
-        <meta property="og:image" content="/path/to/your/image.jpg" />
         <meta property="og:url" content="https://faceshapedetect.com" />
         
       </Head>
