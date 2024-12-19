@@ -7,7 +7,7 @@ const upload = multer({ storage });
 
 export const config = {
   api: {
-    bodyParser: false, // Disable bodyParser to allow multer to handle file uploads
+    bodyParser: false, 
   },
 };
 
