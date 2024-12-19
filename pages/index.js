@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Head from 'next/head'; 
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -26,31 +28,35 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Head>
+        <title>Face Shape Detector with AI - Identify Your Face Shape</title>
+        <meta name="description" content="Upload an image and let AI detect your face shape with high accuracy." />
+        <meta name="keywords" content="face shape detector, AI face detection, face shape identification, AI styling tool, face shape detector, image upload" />
+        <meta name="author" content="Face Shape Detect" />
+        <meta property="og:title" content="Face Shape Detector with AI" />
+        <meta property="og:description" content="Upload an image and let AI detect your unique face shape. Personalized styling recommendations based on your face shape." />
+        <meta property="og:image" content="/path/to/your/image.jpg" />
+        <meta property="og:url" content="https://faceshapedetect.com" />
+        
+      </Head>
     <div className="bg-black text-white min-h-screen">
       {/* Navbar */}
-      <nav className="flex items-center justify-between py-6 px-10 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="text-2xl font-semibold">Face Shape Detector</div>
-        <div className="space-x-6">
-          <a href="#features" className="text-gray-400 hover:text-white">Features</a>
-          <a href="#reviews" className="text-gray-400 hover:text-white">Reviews</a>
-          <a href="#detect" className="text-gray-400 hover:text-white">Detect</a>
-          <a href="#faq" className="text-gray-400 hover:text-white">FAQ</a>
-        </div>
-      </nav>
+    <Navbar/>
 
       {/* Hero Section */}
-      <section className="text-center py-20">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+      <section className="text-center py-20 p-2 ">
+        <h1 className="mt-12 text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Detect Your Face Shape with AI
         </h1>
-        <p className="mt-6 mb-6 text-xl text-gray-400">Upload an image and let AI reveal your unique face shape.</p>
+        <p className="mt-6 mb-6 md:text-xl text-gray-400">Upload an image and let AI reveal your unique face shape.</p>
         <a href="#detect" className="mt-24 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
           Detect Face Shape
         </a>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+      <section id="features" className="py-20 px-8 bg-gradient-to-b from-gray-900 to-gray-800 rounded-t-[5%]">
         <h2 className="text-4xl font-semibold text-center mb-12">Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -154,5 +160,7 @@ export default function Home() {
         <p className="text-gray-400">&copy; 2024 Face Shape Detect. All rights reserved.</p>
       </footer>
     </div>
+    </>
+
   );
 }
