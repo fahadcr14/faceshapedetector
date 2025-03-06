@@ -33,7 +33,9 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button>Get Started</Button>
+          <Button
+          >
+            <a href="#detect">Get Started</a></Button>
         </nav>
 
         {/* Mobile Navigation */}

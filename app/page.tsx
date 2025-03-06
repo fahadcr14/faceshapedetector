@@ -200,16 +200,30 @@ export default function Home() {
             )}
           </CardContent>
           <CardFooter className="flex justify-center">
-            <Button disabled={loading} className="w-full" onClick={() => document.getElementById("picture").click()}>
-              {loading ? "Analyzing..." : "Select an Image"}
-            </Button>
+          {result ? (
+          <Button asChild>
+            <a href="#result" className="block w-full text-center">
+              View Results
+            </a>
+          </Button>
+        ) : (
+          <Button
+            disabled={loading}
+            className="w-full"
+            onClick={() => document.getElementById("picture")?.click()}
+          >
+            {loading ? "Analyzing..." : "Select an Image"}
+          </Button>
+        )}
+
+            
           </CardFooter>
         </Card>
       </section>
 
       {/* Results Section */}
       {result && (
-            <section id="result"className="container px-4 py-16 mx-auto">
+            <section id="result" className="container px-4 py-16 mx-auto">
               <div className="max-w-3xl mx-auto mb-16 text-center">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Your Results</h2>
                 <p className="mt-4 text-muted-foreground">Based on our AI analysis of your facial structure</p>
