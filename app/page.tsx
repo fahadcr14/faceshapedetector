@@ -466,7 +466,7 @@ export default function Home() {
             <a title="All The Best AI Tools" rel="nofollow" href="https://allinai.tools">All in AI Tools</a>
             <a href="https://aistage.net" rel="nofollow" title="AIStage">AIStage</a>
             <a href="https://www.dir2ai.com"  title="Dir2AI - Best AI Websites and Tools">Dir2AI</a>
-            <a href="https://iuu.ai/" rel="nofollow">iuu AI</a>
+            <a href="https://iuu.ai/" >iuu AI</a>
           </div>
         </div>
       </footer>
