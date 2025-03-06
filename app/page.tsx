@@ -461,6 +461,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Face Shape Detect. All rights reserved.
             </p>
+            <a href="https://aihubs.ai/" title="AiHubs - Discover The Best AI Tools">AiHubs</a>
           </div>
         </div>
       </footer>
