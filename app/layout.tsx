@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: "Face Shape Detect - No Signup No Ads 100% Free & Private",
   description: "This face shape detector uses Ai modern technology to analyze your faces and tells you whats your face shape is.Try Now 100% Free.",
   keywords:
-    "face shape detector, AI face detection, face shape identification, AI styling tool, face shape detector, image upload",
+    "face shape detector, AI face detection, face shape identification, AI styling tool, face shape detect,detect your face shape,faceshape,oblong face,heart face,diamond face ,oval face,round face, image upload",
   authors: [{ name: "Face Shape Detect" }],
   openGraph: {
-    title: "Face Shape Detect - No Signup No Ads 100% Free & Private",
+    title: "Face Shape Detect - No Signup - No Ads 100% Free Privacy",
     description:
       "This face shape detector uses Ai modern technology to analyze your faces and tells you whats your face shape is.Try Now 100% Free. ",
     url: "https://faceshapedetect.com",
