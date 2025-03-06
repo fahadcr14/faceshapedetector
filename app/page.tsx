@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { Camera, Shield, Lightbulb, Upload, ChevronDown, User, Lock, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -74,10 +74,131 @@ export default function Home() {
 
 
   }
-  
+  const faqData=[
+    {
+      question: "What is Face Shape Detection and How Does it Work?",
+      answer:
+        "Face shape detection uses AI and advanced computer vision techniques to analyze the proportions and features of your face, determining the most accurate face shape from categories like oval, round, square, and more.",
+    },
+    {
+      question: "How Can I Detect My Face Shape Accurately?",
+      answer:
+        "You can detect your face shape accurately by uploading a front-facing photo of your face. Our AI-powered tool analyzes key facial landmarks such as the forehead, jawline, and cheekbones to identify your unique face shape.",
+    },
+    {
+      question: "Can I Use Face Shape Detection on Mobile Devices?",
+      answer:
+        "Yes, our face shape detector works seamlessly on mobile devices, allowing you to detect your face shape easily from your smartphone or tablet with a simple selfie upload.",
+    },
+    {
+      question: "How Does the Face Shape Detector Analyze My Face?",
+      answer:
+        "The face shape detector analyzes key facial points such as your forehead, cheekbones, jawline, and chin. By measuring and comparing these features, it determines the closest match to one of the common face shapes.",
+    },
+    {
+      question: "Is the Face Shape Detector Free to Use?",
+      answer:
+        "Yes, the face shape detection tool is free to use. You can upload a photo and receive instant face shape analysis without any charges or hidden fees.",
+    },
+    {
+      question: "What Types of Face Shapes Can the Detector Identify?",
+      answer:
+        "Our face shape detector can identify various face shapes, including oval, round, square, heart, diamond, rectangular, and oblong, offering detailed insights into your facial structure.",
+    },
+    {
+      question: "Can the Face Shape Detector Identify Face Shapes from Side Profile Photos?",
+      answer:
+        "For optimal accuracy, the face shape detector works best with front-facing photos. Side profile photos may not provide the necessary detail for precise face shape analysis.",
+    },
+    {
+      question: "What Information Does the Face Shape Detector Extract from My Photo?",
+      answer:
+        "The face shape detector extracts key measurements and ratios of your face, including the width of your forehead, cheekbones, and jawline, as well as the overall length of your face.",
+    },
+    {
+      question: "What’s the Best Way to Take a Photo for Face Shape Detection?",
+      answer:
+        "For the best results, use a clear, well-lit, front-facing photo of your face. Avoid using group photos or images with heavy angles, as they may affect the accuracy of the face shape detection.",
+    },
+    {
+      question: "How Can Knowing My Face Shape Help with Fashion?",
+      answer:
+        "Knowing your face shape helps you make better fashion and styling decisions, such as selecting hairstyles, glasses, and makeup that complement your unique facial features.",
+    },
+    {
+      question: "Can I Use the Face Shape Detector for Group Photos?",
+      answer:
+        "The face shape detector works best with individual photos. Group photos can distort the results, as the tool may struggle to accurately identify multiple faces in one image.",
+    },
+    {
+      question: "How Accurate is the Face Shape Detection Tool?",
+      answer:
+        "Our face shape detection tool is highly accurate, powered by advanced AI algorithms trained on thousands of diverse facial images to ensure precision across different facial structures.",
+    },
+    {
+      question: "What Should I Do If My Face Shape Doesn’t Match a Category?",
+      answer:
+        "If your face shape doesn’t match a specific category, the tool will provide a closest match based on the key facial landmarks. Contact support for more tailored assistance or styling recommendations.",
+    },
+    {
+      question: "Can I Try Different Hairstyles Based on My Face Shape?",
+      answer:
+        "Yes, once your face shape is detected, you can explore hairstyle recommendations that suit your face shape, allowing you to choose a style that highlights your best features.",
+    },
+    {
+      question: "What Face Shapes Are Most Commonly Detected?",
+      answer:
+        "The most commonly detected face shapes are oval, round, square, and heart-shaped, each offering unique characteristics and suitable styling options.",
+    },
+    {
+      question: "How Can Face Shape Detection Improve My Style Choices?",
+      answer:
+        "Knowing your face shape allows you to make better style choices, from choosing the right clothing that complements your body shape to picking accessories like glasses and hats that enhance your facial features.",
+    },
+    {
+      question: "Is My Image Stored After Using the Face Shape Detector?",
+      answer:
+        "No, your photo is not stored after the analysis. All images are processed securely and immediately discarded to ensure your privacy and data protection.",
+    },
+    {
+      question: "What Are the Benefits of Using a Face Shape Detector for Fashion and Beauty?",
+      answer:
+        "Using a face shape detector helps you find the perfect hairstyle, glasses, and makeup that match your facial features, making it easier to achieve a stylish, well-rounded look.",
+    },
+    {
+      question: "Can I Use the Face Shape Detector to Choose Glasses for My Face Shape?",
+      answer:
+        "Yes, after detecting your face shape, you can receive personalized recommendations for glasses that suit your specific face shape, enhancing your overall appearance.",
+    },
+    {
+      question: "Why Is It Important to Know Your Face Shape for Dressing Well?",
+      answer:
+        "Understanding your face shape is essential for dressing well. It helps you choose outfits and accessories that highlight your best features, making you look more confident and stylish.",
+    },
 
+  ]
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
+    };
+
+    // Inject structured data into the page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+  }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/80 overflow-x-hidden">
+    <div className="bmin-h-screen bg-gradient-to-b from-background to-background/80 overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}
@@ -315,34 +436,8 @@ export default function Home() {
 
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
-            {[
-              {
-                question: "Is my image secure?",
-                answer:
-                  "Yes, we prioritize your privacy. Your image is processed securely and not stored on our servers. All analysis happens in real-time and no facial data is retained after processing.",
-              },
-              {
-                question: "How accurate is the detection?",
-                answer:
-                  "Our AI is trained on a diverse dataset to ensure high accuracy across different ethnicities and facial structures. The algorithm analyzes multiple facial points to determine the closest match to standard face shape categories.",
-              },
-              {
-                question: "Can I use this on mobile?",
-                answer:
-                  "Yes, our application is fully responsive and works on all devices including smartphones and tablets. You can take a selfie directly with your mobile device and upload it for analysis.",
-              },
-              {
-                question: "What face shapes can be detected?",
-                answer:
-                  "Our AI can detect all common face shapes including oval, round, square, heart, diamond, rectangular, and triangular. The results show percentage matches to help you understand your unique facial structure.",
-              },
-              {
-                question: "Do you offer styling recommendations?",
-                answer:
-                  "Currently, we focus on accurate face shape detection. We plan to add personalized styling recommendations for hairstyles, glasses, and makeup in a future update.",
-              },
-            ].map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
+          {faqData.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="shadow p-1 rounded-xl">
                 <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                 <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
