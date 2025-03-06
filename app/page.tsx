@@ -464,6 +464,8 @@ export default function Home() {
             <a href="https://aihubs.ai/" title="AiHubs - Discover The Best AI Tools" rel="nofollow">AiHubs</a>
             <a href='https://game-sprunki.com/' title='Game Sprunki' rel="nofollow">Game Sprunki</a>
             <a title="All The Best AI Tools" rel="nofollow" href="https://allinai.tools">All in AI Tools</a>
+            <a href="https://aistage.net" rel="nofollow" title="AIStage">AIStage</a>
+
           </div>
         </div>
       </footer>
