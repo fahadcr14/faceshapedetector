@@ -56,22 +56,8 @@ export async function POST(request: Request) {
   }
 }
 
-// This is a fallback implementation in case the external API is not available
-export async function GET() {
-  // Return a mock response for testing
-  return NextResponse.json({
-    oval: 75.2,
-    round: 12.5,
-    square: 5.8,
-    heart: 3.2,
-    diamond: 2.1,
-    rectangular: 1.2,
-  })
-}
+// New way to specify the configuration
+export const runtime = 'edge'; // Or 'nodejs', depending on your runtime needs
+export const bodyParser = false; // Disable body parsing for file uploads
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}
 
