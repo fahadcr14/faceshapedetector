@@ -198,11 +198,6 @@ export default function Home() {
     document.head.appendChild(script);
   }, []);
   return (
-    <>
-    <head>
-      <meta name="bestofai-verification" content="baf9b94eec4c" />
-
-    </head>
     <div className="bmin-h-screen bg-gradient-to-b from-background to-background/80 overflow-x-hidden">
       <Navbar />
 
@@ -476,7 +471,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
-    </>
   )
 }
 
