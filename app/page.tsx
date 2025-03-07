@@ -198,6 +198,11 @@ export default function Home() {
     document.head.appendChild(script);
   }, []);
   return (
+    <>
+    <head>
+      <meta name="bestofai-verification" content="baf9b94eec4c" />
+
+    </head>
     <div className="bmin-h-screen bg-gradient-to-b from-background to-background/80 overflow-x-hidden">
       <Navbar />
 
@@ -466,11 +471,12 @@ export default function Home() {
             <a title="All The Best AI Tools" rel="nofollow" href="https://allinai.tools">All in AI Tools</a>
             <a href="https://aistage.net" rel="nofollow" title="AIStage">AIStage</a>
             <a href="https://www.dir2ai.com"  title="Dir2AI - Best AI Websites and Tools">Dir2AI</a>
-            <a href="https://iuu.ai/" >iuu AI</a>
+            {/* <a href="https://iuu.ai/" >iuu AI</a> */}
           </div>
         </div>
       </footer>
     </div>
+    </>
   )
 }
 
